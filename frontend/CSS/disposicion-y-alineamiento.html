@@ -192,6 +192,7 @@
             position: relative;
 
             margin-bottom: 220px;
+            border: 1px solid purple;
         }
         .z-container p {
             background: rgba(0, 0, 0, 0.7);
@@ -210,14 +211,28 @@
             height: 100px;
             background: rgba(0, 0, 0, 0.8);
             color: white;
+
+            position: absolute;
+            z-index: 1;
+            margin: 30px;
         }
         .green-box {
             background: lightgreen;
-            height: 100px;
+            height: 150px;
+
+            position: absolute;
+            z-index: 2;
+            top: -15px;
+            right: 25px;
         }
         .gray-box {
             background: lightgray;
             height: 100px;
+
+            position: absolute;
+            z-index: 3;
+            top: 120px;
+            right: 200px;
         }
     </style>
 </head>
