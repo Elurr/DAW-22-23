@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<style>
+    .container {
+        width: 250px;
+    }
+    .pantalla {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+    .pantalla input {
+        width: 100%;
+        background-color: black;
+        color: white;
+    }
+    div {
+        border: 2px solid black;
+    }
+    .teclas {
+        display: flex;
+        /* margin: ; */
+    }
+    .teclas div {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="pantalla">
+            <input type="text">
+        </div>
+        <div class="teclas">
+            <div>
+                <button>+</button>
+                <button>7</button>
+                <button>4</button>
+                <button>1</button>
+                <button>0</button>
+            </div>
+            <div>
+                <button>-</button>
+                <button>8</button>
+                <button>5</button>
+                <button>2</button>
+                <button>.</button>
+            </div>
+            <div>
+                <button>&times;</button>
+                <button>9</button>
+                <button>6</button>
+                <button>3</button>
+                <button>C</button>
+            </div>
+            <div>
+                <button>&#247;</button>
+                <button style="height: 80%;">=</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

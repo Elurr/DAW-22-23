@@ -185,6 +185,40 @@
 
             transform: translate(-50%, -50%);
         }
+
+        /* z-index */
+        .z-container {
+            color: white;
+            position: relative;
+
+            margin-bottom: 220px;
+        }
+        .z-container p {
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .z-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            opacity: 0.9;
+        }
+
+        .black-box {
+            border: 2px solid black;
+            height: 100px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+        .green-box {
+            background: lightgreen;
+            height: 100px;
+        }
+        .gray-box {
+            background: lightgray;
+            height: 100px;
+        }
     </style>
 </head>
 
@@ -437,6 +471,53 @@
         <p class="bottom left">Bottom Left</p>
         <p class="bottom right">Bottom Right</p>
     </div>
+
+    <hr>
+
+    <h2>El posicionamiento vertical con <code>z-index</code></h2>
+    <p>
+        El <code>z-index</code> determina el orden en el que se amontonan los elementos.
+    </p>
+    <p>
+        Cuando los elementos se posicionan, puede que se monten sobre otros.
+    </p>
+    <p>
+        Esta propiedad determina en qué orden se amontonan los elementos. Es decir, qué elementos van por encima o debajo de los otros.
+    </p>
+
+    <div class="z-container">
+        <h1>Esto es un título</h1>
+        <p>
+            He aquí una img con un z-index de -1
+        </p>
+        <img src="https://images.pexels.com/photos/264905/pexels-photo-264905.jpeg" alt="" width="100%">
+
+        <p>
+            <b>Nota:</b> El <code>z-index</code> sólo funciona en elementos posicionados o en elementos flexibles(son aquellos descendientes de contenedores con <code>display: flex</code>)
+        </p>
+    </div>
+
+    <h3>otro ejemplo de <code>z-index</code></h3>
+
+    <div class="z-container">
+        <div class="black-box">
+            <p>
+                Caja negra con un <code>z-index</code> de 1.
+            </p>
+        </div>
+        <div class="green-box">
+            <p>
+                Caja verde con un <code>z-index</code> de 2.
+            </p>
+        </div>
+        <div class="gray-box">
+            <p>
+                Caja gris con un <code>z-index</code> de 3.
+            </p>
+        </div>
+    </div>
+
+    
 
     <pre>
 
