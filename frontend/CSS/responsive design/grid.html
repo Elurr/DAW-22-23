@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+
+    <link rel="stylesheet" href="../../general.css">
+    <style>
+        .grid-container {
+
+        }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Grid o rejilla</h1>
+    <p>
+        El sistema grid de CSS permite utilizar una plantilla de rejilla, con filas y columnas, para alinear de manera sencilla páginas web sin necesidad de usar float o posicionamiento.
+    </p>
+
+    <h2>Elementos grid</h2>
+    <p>
+        Una rejilla consiste en un elemento padre, con uno o más hijos.
+    </p>
+    <p>
+        El elemento padre debe de tener la propiedad <code>display: grid</code> o <code>inline-grid</code>. Los elementos descendientes se convertirán automáticamente en objetos(items) grid.
+    </p>
+
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+    </div>
+    
+</body>
+</html>
