@@ -9,13 +9,56 @@
     <link rel="stylesheet" href="../../general.css">
     <style>
         .grid-container {
+            display: grid;
+            /* auto indica el número de columnas, en este caso 3 */
+            grid-template-columns: auto auto auto;
+            /* también podemos asignar un espacio vacío entre los elementos */
+            /* column-gap: 5px;
+            row-gap: 20px; */
+            gap: 5px;
 
+            margin-bottom: 20px;
+            background-color: #2196F3;
+            padding: 10px;
         }
 
         .grid-item {
             background-color: rgba(255, 255, 255, 0.8);
             border: 1px solid rgba(0, 0, 0, 0.8);
             padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .item3 {
+            grid-row-start: 3;
+            grid-column-start: 2;
+
+            grid-row-end: 5;
+            grid-column-end: 4;
+        }
+
+        /* primer ejercicio */
+        .header {
+            grid-row-start: 1;
+            grid-column-start: 1;
+
+            grid-row-end: 2;
+            grid-column-end: 4;
+        } 
+        .menu {
+            grid-row-start: 2;
+            grid-column-start: 1;
+
+            grid-row-end: 4;
+            grid-column-end: 2;
+        }
+        .footer {
+            grid-row-start: 3;
+            grid-column-start: 2;
+
+            grid-row-end: 4;
+            grid-column-end: 4;
         }
     </style>
 </head>
@@ -36,14 +79,26 @@
     <div class="grid-container">
         <div class="grid-item">1</div>
         <div class="grid-item">2</div>
-        <div class="grid-item">3</div>
+        <div class="grid-item item3">3</div>
         <div class="grid-item">4</div>
         <div class="grid-item">5</div>
         <div class="grid-item">6</div>
         <div class="grid-item">7</div>
         <div class="grid-item">8</div>
         <div class="grid-item">9</div>
+        <div class="grid-item">10</div>
+        <div class="grid-item">11</div>
+        <div class="grid-item">12</div>
     </div>
+
+    <div class="grid-container">
+        <div class="grid-item header">Header</div>
+        <div class="grid-item menu">Menu</div>
+        <div class="grid-item main">Main</div>
+        <div class="grid-item right">Right</div>
+        <div class="grid-item footer">Footer</div>
+    </div>
+
     
 </body>
 </html>
