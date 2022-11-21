@@ -30,7 +30,7 @@
     background-color: darkcyan;
     position: relative;
 
-    animation: cambioEstado 5s;
+    /* animation: cambioEstado 5s; */
 }
 
 @keyframes cambioEstado {
@@ -61,5 +61,102 @@
         background-color: darkolivegreen;
         left: 0%;
         top: 0;
+    }
+}
+
+.circulo {
+    height: 100px;
+    width: 100px;
+    background-color: chartreuse;
+    border-radius: 50%;
+
+    position: relative;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+
+    animation: moverTriangulo 6s;
+    animation-delay: 4s;
+    animation-iteration-count: 4;
+    animation-direction: alternate-reverse;
+    animation-timing-function: linear;
+}
+
+@keyframes moverTriangulo {
+    0% {
+        left: 50%;
+        top: 0;
+    }
+    33% {
+        left: 90%;
+        top: 200px;
+    }
+    66% {
+        left: 10%;
+        top: 200px;
+    }
+    100% {
+        left: 50%;
+        top: 0;
+    }
+}
+
+
+/* Botón: */
+.boton {
+    position: relative;
+    background-color: #17ab2b;
+    padding: 5px 10px;
+    width: 80px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 5px 0 0 rgb(180, 180, 180);
+    user-select: none;
+}
+.boton:active {
+    top: 5px;
+
+    /* la sombra no se mueve del sitio anterior, dando el efecto de pulsación */
+    box-shadow: 0 0px 0 0 rgb(180, 180, 180);
+}
+
+/* Velocidades */
+.velocidades {
+    position: relative;
+    height: 70px;
+    width: 100px;
+    background-color: cornflowerblue;
+    border: 1px solid black;
+    text-align: center;
+
+    animation-name: curvaVelocidad;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+#div1 {
+    animation-timing-function: linear;
+}
+#div2 {
+    animation-timing-function: ease;
+}
+#div3 {
+    animation-timing-function: ease-in;
+}
+#div4 {
+    animation-timing-function: ease-out;
+}
+#div5 {
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes curvaVelocidad {
+    from {
+        width: 100px;
+    }
+    to {
+        width: 100%;
     }
 }
