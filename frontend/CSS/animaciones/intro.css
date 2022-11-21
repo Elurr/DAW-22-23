@@ -1,0 +1,65 @@
+.animado {
+    height: 100px;
+    width: 100px;
+    background-color: cornflowerblue;
+
+    /* para que funcione la animación hay que asignársela al elemento: */
+    animation-name: cambioColor;
+    /* como mínimo, además del nombre hay que especificar la duración */
+    animation-duration: 5s;
+}
+
+@keyframes cambioColor {
+    /* como mínimo debe especificarse el estado el estado inicial y el final */
+
+    /* estado inicial */
+    from {
+        background-color: cornflowerblue;
+    }
+
+    /* estado final */
+    to {
+        background-color: tomato;
+    }
+}
+
+/* Con distintos estados */
+.estados {
+    height: 100px;
+    width: 100px;
+    background-color: darkcyan;
+    position: relative;
+
+    animation: cambioEstado 5s;
+}
+
+@keyframes cambioEstado {
+    /* Se pueden asignar porcentajes para definir distintos estados */
+    0% {
+        background-color: darkcyan;
+        width: 100px;
+        left: 0%;
+        top: 0;
+    }
+    25% {
+        background-color: aquamarine;
+        width: 200px;
+    }
+    50% {
+        background-color: blueviolet;
+        width: 100px;
+        left: 50%;
+        top: 0;
+    }
+    75% {
+        background-color: blanchedalmond;
+        border-radius: 50%;
+        left: 50%;
+        top: 300px;
+    }
+    100% {
+        background-color: darkolivegreen;
+        left: 0%;
+        top: 0;
+    }
+}
