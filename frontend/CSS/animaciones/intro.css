@@ -30,7 +30,7 @@
     background-color: darkcyan;
     position: relative;
 
-    /* animation: cambioEstado 5s; */
+    animation: cambioEstado 5s;
 }
 
 @keyframes cambioEstado {
