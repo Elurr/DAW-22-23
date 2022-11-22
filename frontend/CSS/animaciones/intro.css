@@ -133,7 +133,7 @@
 
     animation-name: curvaVelocidad;
     animation-duration: 5s;
-    animation-fill-mode: forwards;
+    /* animation-fill-mode: forwards; */
 }
 
 #div1 {
@@ -159,4 +159,21 @@
     to {
         width: 100%;
     }
+}
+
+.div-fill {
+    width: 50px;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+}
+
+#fillForwards {
+    animation-fill-mode: forwards;
+}
+#fillBackwards {
+    animation-fill-mode: backwards;
+}
+#fillBoth {
+    animation-fill-mode: both;
 }
