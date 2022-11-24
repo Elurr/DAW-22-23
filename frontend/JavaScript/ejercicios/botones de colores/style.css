@@ -39,7 +39,7 @@ body {
 }
 
 .grid-container .buttons:nth-child(1) {
-    background: cornflowerblue;
+    background-color: cornflowerblue;
 }
 .grid-container .buttons:nth-child(2) {
     background: crimson;
