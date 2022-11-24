@@ -29,6 +29,9 @@
 
         .parallax {
             height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             /* efecto de parallax */
             background-attachment: fixed;
@@ -37,6 +40,12 @@
             background-size: cover;
             background-repeat: no-repeat;
         }
+        .parallax div {
+            background: rgba(40, 40, 40, 0.7);
+            max-width: 250px;
+            padding: 5px 10px;
+            
+        }
         .parallax.uno {
             background-image: url(../../../recursos/pexels-nicole-avagliano-2706654.jpg);
         }
@@ -44,7 +53,13 @@
             background-image: url(../../../recursos/pexels-francesco-ungaro-998641.jpg);
         }
         .parallax.tres {
-            background-image: url(../../../recursos/pexels-guillaume-meurice-2873669-min.jpg);
+            background-image: url(../../../recursos/pexels-tobias-bjørkli-1938348.jpg);
+        }
+
+        @media screen and (min-width: 720px) {
+            .parallax {
+                height: 900px;
+            }
         }
     </style>
 </head>
@@ -53,17 +68,23 @@
         <h1>Efecto de Parallax</h1>
     </header>
 
-    <div class="parallax uno"></div>
+    <div class="parallax uno">
+        <div><h2>El espacio exterior</h2></div>
+    </div>
     <section>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae accusamus minus tempora incidunt placeat nesciunt odit optio laborum. Consequuntur tenetur cupiditate fugiat ab expedita incidunt, nesciunt error quam commodi itaque.</p>
     </section>
 
-    <div class="parallax dos"></div>
+    <div class="parallax dos">
+        <div><h2>El cielo nocturno</h2></div>
+    </div>
     <section>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero veritatis cupiditate tempora quam ab tenetur asperiores eius alias, debitis, accusamus eligendi quae et laboriosam voluptas nulla quibusdam commodi expedita accusantium.</p>
     </section>
 
-    <div class="parallax tres"></div>
+    <div class="parallax tres">
+        <div><h2>Luces del Norte</h2></div>
+    </div>
     <footer></footer>
 </body>
 </html>
