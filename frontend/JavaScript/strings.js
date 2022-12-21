@@ -53,4 +53,4 @@ let strLista = 'Germán, Román, Angela, Tere, Santi, Rebeca, Dafne';
 let arrayLista = strLista.split(', ');
 console.log(arrayLista);
 let pSplit = document.querySelector("#split");
-pSplit.innerHTML = arrayLista;
+pSplit.innerHTML = arrayLista.join("<br>")
