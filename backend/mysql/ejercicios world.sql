@@ -23,7 +23,7 @@ SELECT name FROM world.city ORDER BY name;
 -- Escribir una consulta SQL que muestre la ciudad con la menor población.
 SELECT name, population FROM world.city ORDER BY Population LIMIT 1;
 -- Escribir una consulta SQL que muestre la ciudad con la mayor población.
-SELECT name, population FROM world.city ORDER BY Population DESC;
+SELECT name, population FROM world.city ORDER BY Population DESC LIMIT 1;
 
 
 
