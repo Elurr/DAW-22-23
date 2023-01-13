@@ -31,6 +31,6 @@ SELECT nomEmp, salEmp FROM empleados
     LIMIT 1;
     
 -- 33. Mostrar el código y nombre de cada jefe, junto al número de empleados que dirige. Solo los que tengan mas de dos empleados (2 incluido).
-SELECT  COUNT(*) 'Número de empleados' FROM empleados 
+SELECT jefeID j, (SELECT nomEmp FROM empleados WHERE nDIEmp = j), COUNT(*) 'Número de empleados' FROM empleados 
 	GROUP BY jefeID
     HAVING COUNT(*) >= 2;    
