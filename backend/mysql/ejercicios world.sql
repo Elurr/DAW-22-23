@@ -26,8 +26,6 @@ SELECT name, population FROM world.city ORDER BY Population LIMIT 1;
 SELECT name, population FROM world.city ORDER BY Population DESC LIMIT 1;
 
 
-
-
 -- Escribir una consulta SQL que muestre la lista de todos los idiomas hablados en la región del Caribe.
 SELECT DISTINCT(language), region FROM world.countrylanguage 
 	JOIN world.country ON country.code = countrylanguage.countrycode
