@@ -34,3 +34,7 @@ SELECT nomEmp, salEmp FROM empleados
 SELECT jefeID ID_jefe, (SELECT nomEmp FROM empleados WHERE nDIEmp = ID_jefe) 'Nombre de jefe', COUNT(*) 'Número de empleados' FROM empleados 
 	GROUP BY jefeID
     HAVING COUNT(*) >= 2;    
+    
+SELECT jefeID,  COUNT(*) 'Número de empleados' FROM empleados
+	GROUP BY jefeID
+    HAVING COUNT(*) >= 2;
