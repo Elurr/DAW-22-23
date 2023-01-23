@@ -1,3 +1,4 @@
+-- Active: 1673602429532@@127.0.0.1@3306@tienda
 -- Crear una bd llamada 'tienda' y comenzar a usarla
 CREATE DATABASE tienda;
 USE tienda;
@@ -59,3 +60,4 @@ UPDATE productos SET categoria = 'silla' WHERE LEFT(nombre, 5) = 'Silla';
     SELECT nombre, precio FROM productos 
         WHERE precio < (SELECT AVG(precio) FROM productos WHERE categoria = 'silla');
 
+ 
