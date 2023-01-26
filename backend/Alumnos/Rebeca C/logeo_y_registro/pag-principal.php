@@ -3,6 +3,8 @@ session_start();
 
 if(isset($_POST['logout'])){
     unset($_SESSION['logged']);
+
+    session_destroy();
 }
 ?>
 <!DOCTYPE html>

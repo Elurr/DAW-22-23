@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" || isset($_SESSION['usertype'])) {
     // Si el usuario es admin
     if ($_SESSION['usertype'] == "admin") {
         // Mostramos contenido exclusivo del admin
+        $GLOBALS['createduser'] = true;
         echo "Bienvenido, administrador.";
     } elseif ($_SESSION['usertype'] == "user") {
         // Mostramos contenido exclusivo del usuario
