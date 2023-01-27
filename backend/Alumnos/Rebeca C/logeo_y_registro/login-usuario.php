@@ -18,6 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
        echo "<p>Bienvenido $user.";
 
        $_SESSION['logged'] = true; 
+       while ($row = $result->fetch_assoc()) {
+         // Creamos una array $row con los resultados de la query del usuario
+         $_SESSION['username'] = $row['nombre']; // Primary KEY
+         $_SESSION['usertype'] = $row['user_type'];
+       }
     //    redirigir 
        echo '<a href="pag-principal.php">
                     <button>Volver a página principal</button>
