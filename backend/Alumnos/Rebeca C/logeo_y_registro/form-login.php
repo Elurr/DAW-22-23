@@ -21,7 +21,9 @@
         <br>
         <input name="password" type="password" placeholder="Contraseña" required>
         <br>
-        <input  type="submit" value="Acceder">
+        <input  type="submit" value="Acceder"> <br>
+        <!-- Este input oculto, no se puede manipular pero puede enviar datos -->
+        <input type='hidden' name='olduser' value='$user'>
     </form>
     <a href="form-registro.php">Registrate ahora</a>
 </div>
