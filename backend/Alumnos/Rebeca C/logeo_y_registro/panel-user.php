@@ -20,49 +20,30 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabla con base de datos</title>
 
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
 
-        table {
-            border: 3px solid black;
-            border-collapse: collapse;
-        }
-
-        th {
-            background-color: #aabbcc;
-            border: 2px solid black;
-            padding: 2px 5px;
-        }
-
-        td {
-            border: 1px solid black;
-            padding: 2px 5px;
-        }
-    </style>
+    <?php include 'styles.php'; ?>
 </head>
 
 <body>
-    <form action="">
-        <h1>Tabla de los usuarios de la BD</h1>
-        <table>
 
-            <?php
-            if ($result->num_rows > 0) {
-                echo "<tr>
+    <h1>Tabla de los usuarios de la BD</h1>
+    <table>
+
+        <?php
+        if ($result->num_rows > 0) {
+            echo "<tr>
             <th>nombre</th>
             <th>contraseña</th>
             <th>tipo de usuario</th>
             <th>modificar</th>
             </tr>";
-                // imprimir los datos de cada fila
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr> <td>" . $row['nombre'] . "</td>" .
-                        "<td>" . $row['password'] . "</td>" .
-                        "<td>" . $row['user_type'] . "</td> 
+            // imprimir los datos de cada fila
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr> <td>" . $row['nombre'] . "</td>" .
+                    "<td>" . $row['password'] . "</td>" .
+                    "<td>" . $row['user_type'] . "</td> 
 
-                        
+
                         <td> <svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px'
                         width='24' height='24'
                         viewBox='0 0 24 24'>
@@ -70,13 +51,15 @@ $result = $conn->query($sql);
                         </svg></td> 
                         
                         </tr>";
-                }
             }
+        }
 
-            $conn->close();
-            ?>
-        </table>
-    </form>
+        $conn->close();
+
+
+        ?>
+    </table>
+
 
 </body>
 
