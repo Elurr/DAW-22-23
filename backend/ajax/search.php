@@ -16,10 +16,20 @@ if ($result->num_rows > 0) {
         // relleno el array con los datos del resultado de la query
         $array[] = $row['user'];
     }
-}
 
+    echo "red";
+} else echo "green";
+/*
 foreach ($array as $user) {
     // cada ítem del array se imprimirá seguido de un br, formando una lista
     echo $user . '<br>';
-}
+}*/
 
+/* if (el usuario no existe) {
+    echo "<script>
+    colorChange('green');
+    </script>";
+
+// else colorChange('red');
+
+*/

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('.search-box input[type="text"]').on("keyup input", function () {
+    $('.search-box input[type="text"]').on("change", function () {
         // Cada vez que el value del input cambie, lo recogeremos
         let text = $(this).val();
 
@@ -10,10 +10,15 @@ $(document).ready(function () {
             // Si el valor del input no está vacío, llamamos al php
             $.get("search.php", {term: text}).done(function (data) {
                 resultList.html(data);
+                $('.search-box input[type="text"]').css("borderColor", data);
               });
         } else {
             // Se vacía la lista
             resultList.empty();
         }
       })
+
+    /*   function colorChange(color) {
+        $('.search-box input[type="text"]').css("colorDelBorde", color)
+    }; */
 });
