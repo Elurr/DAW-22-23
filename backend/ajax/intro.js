@@ -18,7 +18,4 @@ $(document).ready(function () {
         }
       })
 
-    /*   function colorChange(color) {
-        $('.search-box input[type="text"]').css("colorDelBorde", color)
-    }; */
 });

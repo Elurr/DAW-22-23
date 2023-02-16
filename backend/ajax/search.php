@@ -12,10 +12,10 @@ $result = $conn->query($sql);
 $array[] = '';
 
 if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        // relleno el array con los datos del resultado de la query
-        $array[] = $row['user'];
-    }
+    // while ($row = $result->fetch_assoc()) {
+    //     // relleno el array con los datos del resultado de la query
+    //     $array[] = $row['user'];
+    // }
 
     echo "red";
 } else echo "green";
@@ -25,11 +25,3 @@ foreach ($array as $user) {
     echo $user . '<br>';
 }*/
 
-/* if (el usuario no existe) {
-    echo "<script>
-    colorChange('green');
-    </script>";
-
-// else colorChange('red');
-
-*/
