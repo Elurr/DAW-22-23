@@ -42,14 +42,21 @@ form div label {
     position: absolute;
     top: 0;
     transition: all .5s;
-    /* z-index: -1; */
+    pointer-events: none;
 }
 
 form div input {
     background: transparent;
     border: none;
+    outline: none;
+    border-radius: 5px 5px 0 0;
     border-bottom: 2px solid white;
     width: 100%;
+    color: white;
+    transition: all 2s;
+}
+form div input:focus {
+    background: rgba(0, 0, 0, .05);
 }
 
 input:focus~label, input:valid~label {
@@ -86,5 +93,5 @@ input[type='submit']:not(:disabled):hover {
 
 /* Eliminar el efecto interno de los navegadores */
 input:focus {
-    transition: all 1000000000s;
+    /* transition: all 1000000000s; */
 }
