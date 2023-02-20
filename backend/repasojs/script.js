@@ -29,10 +29,30 @@ $(document).ready(function () {
         $('.container').fadeToggle();
     });
     $('#btnSlide').click(function () { 
-        $('.container').slideToggle();
+        $('.container').slideToggle(1500);
     });
 
-    $('.cambiar').click(function () { 
-        $('.cambiar').slideToggle();
+    // $('.cambiar').click(function () { 
+    //     $('.cambiar').slideToggle();
+    // });
+
+    let contador = 0;
+    let pos = 'login';
+    $('.cambioForm').click(function () { 
+        if (contador < 1 || pos == 'login') {
+            $('.login').slideToggle(300, function () {
+                $('.signup').slideToggle(300);
+              });
+              contador++;
+              pos = 'signup';
+        } else {
+            $('.signup').slideToggle(300, function () {
+                $('.login').slideToggle(300);
+              });
+              contador--;
+              pos = 'login';
+        }
+        
+        // $('.container').slideToggle(700);
     });
 });

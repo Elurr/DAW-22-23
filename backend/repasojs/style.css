@@ -35,19 +35,24 @@ div.divBtn {
     cursor: pointer;
 }
 
-div.container {
+div.big-container {
     background-color: #072d535e;
     height: 300px;
     width: 250px;
     border-radius: 15px;
     color: white;
+    padding: 0 35px;
+    padding-bottom: 15px;
+}
 
+div.container {
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
 
-    padding: 0 35px;
-    padding-bottom: 15px;
+.container.signup {
+    display: none;
 }
 
 h1 {
