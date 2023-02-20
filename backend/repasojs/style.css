@@ -9,8 +9,30 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+div.divBtn {
+    display: flex;
+    justify-content: space-between;
+
+    width: 285px;
+    margin: 20px;
+}
+
+.divBtn button {
+    background-color: #072d535e;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    transition: all .5s;
+    padding: 5px;
+}
+.divBtn button:hover {
+    box-shadow: inset 0 0 2px 2px white;
+    cursor: pointer;
 }
 
 div.container {
