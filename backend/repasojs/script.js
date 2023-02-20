@@ -6,6 +6,8 @@ $(document).ready(function () {
         valor1 = $('input[name="pass"]').val();
         valor2 = $('input[name="confirm"]').val();
 
+        $('input[type="submit"]').attr('disabled', true);
+
         // sólo se ejecutará cuando los inputs tengan la misma longitud
         if (valor1.length == valor2.length) {
             if (valor1 == valor2) {
@@ -13,7 +15,24 @@ $(document).ready(function () {
     
                 // activamos el botón de registro
                 $('input[type="submit"]').removeAttr('disabled');
-            } else alert('las contraseñas no coinciden');
+            } else {
+                alert('las contraseñas no coinciden');
+                
+            }
         }
     })
+
+    $('#btnShow').click(function () { 
+        $('.container').toggle();
+    });
+    $('#btnFade').click(function () { 
+        $('.container').fadeToggle();
+    });
+    $('#btnSlide').click(function () { 
+        $('.container').slideToggle();
+    });
+
+    $('.cambiar').click(function () { 
+        $('.cambiar').slideToggle();
+    });
 });
