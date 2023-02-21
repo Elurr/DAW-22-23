@@ -3,8 +3,8 @@ $(document).ready(function () {
         // quiero comparar los valores de los dos inputs
 
         // recogemos el valor de los inputs
-        valor1 = $('input[name="pass"]').val();
-        valor2 = $('input[name="confirm"]').val();
+        let valor1 = $('input[name="pass"]').val();
+        let valor2 = $('input[name="confirm"]').val();
 
         $('input[type="submit"]').attr('disabled', true);
 
