@@ -52,7 +52,17 @@ $(document).ready(function () {
               contador--;
               pos = 'login';
         }
+        $('div#background').fadeToggle(1000);
         
         // $('.container').slideToggle(700);
     });
+
+    $('#btnClass').click(function () {
+        $('body').toggleClass('cuerpo');
+        console.log('funciona');
+      });
+    $('#btnBG').click(function () {
+        $('div#background').fadeToggle(1000);
+        console.log('funciona');
+      });
 });
