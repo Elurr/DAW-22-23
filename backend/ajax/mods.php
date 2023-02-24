@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,13 +18,7 @@
 <body>
     <div class="container">
         <form action="">
-            <!-- <select name="" id=""></select> -->
-            <input type="text" name="users" onkeyup="showUser(this.value, 'user')" placeholder="Buscar usuario o correo...">
-            <select onchange="showUser(this.value, 'type_user')">
-                <option value="" disabled selected>Filtrar por permisos</option>
-                <option value="admin">Mostrar administradores</option>
-                <option value="user">Mostrar usuarios</option>
-            </select>
+            <select name="" id="list" onchange="buildTable(this.value)"></select>
         </form>
 
         <div id="display">Los datos de la persona se mostrarán aquí...</div>
@@ -29,14 +27,9 @@
 
 </body>
 <script>
-    function showUser(text, filtro) {
+    function buildTable(id) {
         let display = document.getElementById('display');
 
-
-        // Si el input está vacío, el div tb se vacía
-        if (text == '' || !text) {
-            text = 'all';
-        }
 
         let ajax = new XMLHttpRequest();
             ajax.onreadystatechange = function() {
@@ -45,13 +38,29 @@
                     display.innerHTML = this.responseText;
                 }
             };
-            ajax.open('GET', 'tabla-get.php?value=' + text 
-            + '&filtro=' + filtro, true);
+            ajax.open('GET', 'mods-get.php?id=' + id, true);
             ajax.send();
+            console.log("tabla");
+    }
+
+    function buildSelector() {
+        let display = document.getElementById('list');
+
+        let ajax = new XMLHttpRequest();
+            ajax.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+
+                    display.innerHTML = this.responseText;
+                }
+            };
+            ajax.open('GET', 'mods-get.php', true);
+            ajax.send();
+            console.log("selector");
     }
 
     // Si llamamos a la funcion. La tabla se muestra al cargar la página
-    showUser();
+    buildTable(1);
+    buildSelector();
 </script>
 
 </html>
