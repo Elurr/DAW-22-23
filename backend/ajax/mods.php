@@ -59,7 +59,7 @@
     }
 
     // Si llamamos a la funcion. La tabla se muestra al cargar la página
-    buildTable(1);
+    buildTable(0);
     buildSelector();
 </script>
 

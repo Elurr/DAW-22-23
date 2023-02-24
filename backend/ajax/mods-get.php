@@ -9,6 +9,7 @@ $sql = "SELECT * FROM usuarios";
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $sql = "SELECT * FROM audito WHERE id_user = '$id'";
+    if ($id == 0) $sql = "SELECT * FROM audito WHERE new_user NOT LIKE ''";
 }
 
 
@@ -34,12 +35,24 @@ if (!isset($_GET['id'])) {
 
     // Contenido de la tabla
     while ($row = mysqli_fetch_array($result)) {
+        $user1 = $row['old_user'];
+        $user2 = $row['new_user'];
+
+        $email1 = $row['old_email'];
+        $email2 = $row['new_email'];
+        if ($user1 == $user2) {
+            $user2 = '-';
+        }
+        if ($email1 == $email2) {
+            $email2 = '-';
+        }
+
         echo "<tr>";
         echo "<td>" . $row['fecha_modif'] . "</td>";
-        echo "<td>" . $row['old_user'] . "</td>";
-        echo "<td>" . $row['new_user'] . "</td>";
-        echo "<td>" . $row['old_email'] . "</td>";
-        echo "<td>" . $row['new_email'] . "</td>";
+        echo "<td>" . $user1 . "</td>";
+        echo "<td>" . $user2 . "</td>";
+        echo "<td>" . $email1 . "</td>";
+        echo "<td>" . $email2 . "</td>";
         echo "</tr>";
     }
     echo "</table>";
