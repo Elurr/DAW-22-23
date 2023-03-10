@@ -23,7 +23,11 @@
         </tr>";
     // Contenido de la tabla
     while ($row = mysqli_fetch_array($result)) {
-        echo "<tr>";
+        $fila = "<tr>";
+        if ($row['activo'] == 1 && $row['type_user'] != 'admin') {
+            $fila = "<tr style='background-color: aqua;' >";
+        }
+        echo $fila;
         echo "<td>" . $row['user'] . "</td>";
         echo "<td>" . $row['email'] . "</td>";
         echo "<td>" . $row['type_user'] . "</td>";
@@ -33,3 +37,7 @@
     echo "</table>";
 
     mysqli_close($conn);
+
+?>
+
+

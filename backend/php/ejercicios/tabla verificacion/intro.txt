@@ -1,7 +1,7 @@
 En una empresa, el departamento de informática se ve en la obligación de identificar a todos
 los empleados de tres maneras distintas para aumentar la seguridad: 
     - Mediante el escaneo de su documentación.
-    - Mediante una prueba biométrica.
+    - Mediante una prueba biométrica (una foto, etc...).
     - Mediante el mac de su ordenador personal.
 
 Todos los empleados deberán facilitar estos datos de manera obligatoria. El objetivo es hacer
@@ -30,8 +30,3 @@ Realizar un proyecto de backend con los siguientes puntos:
     que han subido y lo que tienen verificado.
     - los colaboradores tendrán la opción de visualizar y verificar cada uno de los tres apartados
     de cada empleado.
-
-    
-
-    
-
