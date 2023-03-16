@@ -219,8 +219,162 @@ echo "</tr>";
 echo "</table>";
 
 
-// 11. Escribir un programa de PHP que itere los números del 1 al 50. Al imprimirlos, los múltiplos de 3 se sustituirán por "Fizz", los múltiplos de 5 por "Buzz" y los que sean múltiplos de 3 y 5 por "FizzBuzz".
+echo "<h3>11. Escribir un programa de PHP que itere los números del 1 al 50. Al imprimirlos, los múltiplos de 3 se sustituirán por 'Fizz', los múltiplos de 5 por 'Buzz' y los que sean múltiplos de 3 y 5 por 'FizzBuzz'.</h3>";
+
+// 11.1
+for ($i = 1; $i <= 50; $i++) {
+
+    if ($i % 3 == 0 && $i % 5 == 0) {
+        echo "FizzBuzz";
+    } elseif ($i % 3 == 0) {
+        echo "Fizz";
+    } elseif ($i % 5 == 0) {
+        echo "Buzz";
+    } else echo $i;
+
+    echo "<br>";
+}
+
+echo "<hr>";
+
+// 11.2 
+for ($i = 1; $i <= 50; $i++) {
+
+    if ($i % 3 == 0) echo "Fizz";
+    if ($i % 5 == 0) echo "Buzz";
+    if ($i % 3 != 0 && $i % 5 != 0) echo $i;
+
+    echo "<br>";
+}
+
+echo "<hr>";
+
+// 11.3
+
+for ($i = 1; $i <= 50; $i++) {
+    switch ($i) {
+        case $i % 3 == 0 && $i % 5 == 0:
+            echo "FizzBuzz";
+            break;
+        case $i % 3 == 0:
+            echo "Fizz";
+            break;
+        case $i % 5 == 0:
+            echo "Buzz";
+            break;
+        default:
+            echo $i;
+            break;
+    }
+    echo "<br>";
+}
+
+echo "<hr>";
 
 
+echo "<h3>12. Escribir un programa capaz de imprimir un triangulo de Floyd con tantas filas como le indiquemos</h3>";
 
-// 12. Escribir un programa capaz de imprimir un triangulo de Floyd con tantas filas como le indiquemos
+$alcance = 12;
+$contador = 1;
+$espacio = "&nbsp;&nbsp;";
+
+for ($fila = 1; $fila <= $alcance; $fila++) {
+
+    for ($col = 1; $col <= $fila; $col++) {
+        if ($contador < 10) echo "0";
+        echo $contador;
+        echo $espacio;
+        $contador++;
+    }
+    echo "<br>";
+}
+
+
+echo "<h3>13. Escribir un bucle de PHP que imprima una A</h3>";
+for ($i = 1; $i <= 8; $i++) {
+    if ($i <= 1) echo "&nbsp;&nbsp;&nbsp;* * *&nbsp;";
+    if ($i == 4) echo "* * * * *";
+    if ($i != 1 && $i != 4) echo "*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*";
+    echo '<br>';
+}
+
+echo "<hr>";
+
+//   * * *
+// *       *
+// *       *
+// * * * * *
+// *       *
+// *       *
+// *       *
+// *       *
+
+$espacios = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+echo "<pre>";
+for ($i = 1; $i <= 8; $i++) {
+
+    if ($i != 1) {
+        echo "* ";
+    } else echo "&nbsp;&nbsp;";
+
+    if ($i == 1 || $i == 4) {
+        echo "* * *";
+    } else echo $espacios;
+
+    if ($i != 1) echo " *";
+    echo "<br>";
+}
+echo "</pre>";
+
+
+echo "<h3>14. Escribir un bucle de PHP que sea capaz de imprimir este patrón:</h3>";
+
+$n = 5;
+
+for ($i = 1; $i <= $n; $i++) {
+    echo $i . " ";
+    for ($j = 1; $j < $n; $j++) {
+        echo ($i + $n * $j) . " ";
+    }
+    echo '<br>';
+}
+
+// 1 5 9
+// 2 6 10
+// 3 7 11
+// 4 8 12
+
+
+echo "<h3>15. Escribir un bucle de PHP que sea capaz de imprimir este patrón:</h3>";
+
+$n = 5;
+
+for ($i = 1; $i <= $n; $i++) {
+
+    // contador de subida hasta el número de fila
+    for ($j = 1; $j <= $i; $j++) {
+        echo $j;
+    }
+    // contador de bajada hasta el 1
+    for ($k = $i - 1; $k >= 1; $k--) {
+        echo $k;
+    }
+    echo "<br>";
+}
+// 1
+// 121
+// 12321
+// 1234321
+// 123454321
+// ...
+
+echo "<hr>";
+
+$col = 8;
+for ($i = 1; $i <= $col; $i++) {
+
+    echo implode(range(1, $i));
+    if ($i != 1) echo implode(range($i - 1, 1));
+
+    echo "<br>";
+}
