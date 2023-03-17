@@ -9,14 +9,14 @@ if ($_SESSION['logged'] == true) {
     if ($result->num_rows > 0) {
 
         echo "<form action='' method='post'>";
-            echo "<table><tr>";
-            echo "<th>Nombre</th>";
-            echo "<th>nº DNI</th>";
-            echo "<th>Documento de identidad</th>";
-            echo "<th>Prueba Biométrica</th>";
-            echo "<th>PC MAC</th>";
-            echo "<th>Estado</th>";
-            echo "</tr>";
+        echo "<table><tr>";
+        echo "<th>Nombre</th>";
+        echo "<th>nº DNI</th>";
+        echo "<th>Documento de identidad</th>";
+        echo "<th>Prueba Biométrica</th>";
+        echo "<th>PC MAC</th>";
+        echo "<th>Estado</th>";
+        echo "</tr>";
 
         while ($row = $result->fetch_assoc()) {
 
