@@ -42,13 +42,13 @@ let cartasJugador = [
 
 function empezarJuego() {
     // Recogemos la dos cartas iniciales de la casa:
-    jugadaCasa.push(cartasCasa[Math.floor(Math.random() * cartasCasa.length)]);
-    jugadaCasa.push(cartasCasa[Math.floor(Math.random() * cartasCasa.length)]);
+    jugar("casa");
+    jugar("casa");
 
 
     // Recogemos la dos cartas iniciales del jugador:
-    jugadaJugador.push(cartasJugador[Math.floor(Math.random() * cartasJugador.length)]);
-    jugadaJugador.push(cartasJugador[Math.floor(Math.random() * cartasJugador.length)]);
+    jugar("jugador");
+    jugar("jugador");
 
 
     calcularPuntos();
@@ -103,6 +103,41 @@ function calcularPuntos () {
            puntosJugador -= 10; 
         }
     }
+
+    ganador();
+}
+
+function ganador() {
+    if (puntosJugador > 21) {
+        console.log("El jugador se ha pasado de 21. Gana la casa");
+        return;
+    } else if (puntosCasa > 21) {
+        console.log("La casa se ha pasado de 21. Gana el jugador");
+        return;
+    }
+
+    if (puntosJugador > puntosCasa) {
+        console.log("Va ganando el jugador");
+        jugar("casa");
+    } else if (puntosCasa > puntosJugador) {
+        console.log("Gana la casa");
+        jugar("jugador");
+    } else console.log("Hay empate");
+}
+
+function jugar(jugada) {
+    switch (jugada) {
+        case "casa":
+            jugadaCasa.push(cartasCasa[Math.floor(Math.random() * cartasCasa.length)]);
+            break;
+        case "jugador":
+            jugadaJugador.push(cartasJugador[Math.floor(Math.random() * cartasJugador.length)]);
+            break;
+    
+        default:
+            break;
+    }
+    calcularPuntos();
 }
 
 empezarJuego();
