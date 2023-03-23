@@ -8,7 +8,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+    <div class="container">
+        <div class="tablero">
+            <div class="tablero-casa">
+                <p>Cartas de la casa: <span id="mano-casa"></span></p>
+                <p>Puntos: <span id="puntos-casa"></span></p>
+            </div>
+            <div class="tablero-jugador">
+                <p>Cartas del jugador: <span id="mano-jugador"></span></p>
+                <p>Puntos: <span id="puntos-jugador"></span></p>
+            </div>
+            <div class="tablero-resultado">
+                <p id="resultado"></p>
+            </div>
+        </div>
+        <div class="controles">
+            <div class="boton btn-start" onclick="empezarJuego()">Iniciar Partida</div>
+            <div class="boton btn-jugar" onclick="jugar('jugador')">Pedir carta</div>
+            <div class="boton btn-plantarse" onclick="plantarse()">Plantarse</div>
+        </div>
+    </div>
 </body>
 <script src="script.js"></script>
 </html>

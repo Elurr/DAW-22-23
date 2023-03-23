@@ -18,7 +18,6 @@ let cartasCasa = [
 ];
 
 
-
 // El juego del jugador
 let puntosJugador = 0;
 let jugadaJugador = [];
@@ -38,9 +37,22 @@ let cartasJugador = [
     "K"
 ];
 
+// Identificamos los elementos de HTML
+let manoCasa = document.getElementById('mano-casa');
+let manoJugador = document.getElementById('mano-jugador');
+let displayCasa = document.getElementById('puntos-casa');
+let displayJugador = document.getElementById('puntos-jugador');
+let resultado = document.getElementById('resultado');
 
+let fin = false;
+let timer = 0;
 
 function empezarJuego() {
+    // Se resetean las cartas
+    jugadaCasa = [];
+    jugadaJugador = [];
+    fin = false;
+
     // Recogemos la dos cartas iniciales de la casa:
     jugar("casa");
     jugar("casa");
@@ -96,22 +108,30 @@ function calcularPuntos() {
             puntosJugador -= 10;
         }
     }
+    // Se imprime el estado de la partida por consola
     console.log("Cartas de la casa: " + jugadaCasa.join());
     console.log("puntuación de la casa: " + puntosCasa);
     console.log("Cartas del jugador: " + jugadaJugador.join());
     console.log("puntuación del jugador: " + puntosJugador);
+
+    // Se imprime en pantalla
+    manoCasa.innerHTML = jugadaCasa.join();
+    manoJugador.innerHTML = jugadaJugador.join();
+    displayCasa.innerHTML = puntosCasa;
+    displayJugador.innerHTML = puntosJugador;
     ganador();
 }
 
 function ganador() {
-    let fin = false;
     if (puntosJugador > 21) {
         console.log("El jugador se ha pasado de 21. Gana la casa");
+        resultado.innerHTML = "El jugador se ha pasado de 21. Gana la casa";
         fin = true;
         return;
 
     } else if (puntosCasa > 21) {
         console.log("La casa se ha pasado de 21. Gana el jugador");
+        resultado.innerHTML = "La casa se ha pasado de 21. Gana el jugador";
         fin = true;
         return;
     }
@@ -119,17 +139,20 @@ function ganador() {
     if (puntosJugador > puntosCasa && !fin) {
         console.log("Va ganando el jugador");
         console.log("");
-        jugar("casa");
+        resultado.innerHTML = "Va ganando el jugador";
+        // jugar("casa");
         return;
     } else if (puntosCasa > puntosJugador && !fin) {
         console.log("Va ganando la casa");
         console.log("");
-        jugar("jugador");
+        resultado.innerHTML = "Va ganando la casa";
+        // jugar("jugador");
         return;
     } else {
         console.log("Hay empate");
         console.log("");
-        jugar("jugador");
+        resultado.innerHTML = "Hay empate";
+        // jugar("jugador");
         return;
     }
 }
@@ -145,6 +168,23 @@ function jugar(jugada) {
     }
 
     if (jugadaCasa.length >= 2 && jugadaJugador.length >= 2) calcularPuntos();
+}
+
+function plantarse() {
+    if (puntosJugador > puntosCasa) {
+        jugar('casa');
+    } else fin = true;
+
+    if (!fin) {
+        timer = setTimeout(() => {
+            plantarse();
+        }, 1500);
+    } else {
+        clearTimeout(timer);
+        timer = 0;
+    }
+    console.log(fin);
+    
 }
 
 empezarJuego();
