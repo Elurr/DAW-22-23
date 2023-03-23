@@ -1,0 +1,72 @@
+body {
+    height: 100vh;
+    margin: 0;
+
+    /* background: #184f18; */
+    background: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    /* background: rgba(0, 0, 0, 0.3); */
+    background: #184f18;
+    padding: 50px;
+
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tablero {
+    display: flex;
+    justify-content: space-around;
+}
+.tablero > div {
+    margin: 30px;
+}
+
+.controles {
+    display: flex;
+    justify-content: space-between;
+}
+.controles .boton {
+    margin: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    background: #ffffff;
+}
+.controles .boton:hover {
+    cursor: pointer;
+}
+
+p {
+    color: white;
+}
+p span {
+    display: flex;
+    justify-content: start;
+}
+p span div {
+    text-align: center;
+    margin: 1px;
+}
+span#mano-casa {
+    color: red;
+}
+span#mano-jugador {
+    color: black;
+}
+span div {
+    background: #ffffff;
+    border: 1px solid black;
+    height: 22px;
+    width: 13px;
+    border-radius: 2px;
+}

@@ -115,11 +115,23 @@ function calcularPuntos() {
     console.log("puntuación del jugador: " + puntosJugador);
 
     // Se imprime en pantalla
-    manoCasa.innerHTML = jugadaCasa.join();
-    manoJugador.innerHTML = jugadaJugador.join();
+    // manoCasa.innerHTML = jugadaCasa.join();
+    // manoJugador.innerHTML = jugadaJugador.join();
+    mostrarCartas();
     displayCasa.innerHTML = puntosCasa;
     displayJugador.innerHTML = puntosJugador;
     ganador();
+}
+
+function mostrarCartas() {
+    manoCasa.innerHTML = '';
+    manoJugador.innerHTML = '';
+    for (let i = 0; i < jugadaCasa.length; i++) {
+       manoCasa.innerHTML += "<div>" + jugadaCasa[i] + "</div>";
+    }
+    for (let i = 0; i < jugadaJugador.length; i++) {
+       manoJugador.innerHTML += "<div>" + jugadaJugador[i] + "</div>";
+    }
 }
 
 function ganador() {
@@ -173,9 +185,7 @@ function jugar(jugada) {
 function plantarse() {
     if (puntosJugador > puntosCasa) {
         jugar('casa');
-    } else fin = true;
 
-    if (!fin) {
         timer = setTimeout(() => {
             plantarse();
         }, 1500);
@@ -183,7 +193,6 @@ function plantarse() {
         clearTimeout(timer);
         timer = 0;
     }
-    console.log(fin);
     
 }
 
