@@ -123,14 +123,27 @@ function calcularPuntos() {
     ganador();
 }
 
+let iconoDiamantes = `<i class='bi bi-suit-diamond-fill'></i>`;
+let iconoPicas = `<i class="bi bi-suit-spade-fill"></i>`;
+
+// let iconoDiamante = "hola"
+
 function mostrarCartas() {
     manoCasa.innerHTML = '';
     manoJugador.innerHTML = '';
     for (let i = 0; i < jugadaCasa.length; i++) {
-       manoCasa.innerHTML += "<div>" + jugadaCasa[i] + "</div>";
+       manoCasa.innerHTML += "<div class='carta'>"
+       + "<div class='num top'>" + jugadaCasa[i] + "</div>" 
+       + "<div class='palo'>" + iconoDiamantes + "</div>"
+       + "<div class='num bot'>" + jugadaCasa[i] + "</div>" 
+       + "</div>";
     }
     for (let i = 0; i < jugadaJugador.length; i++) {
-       manoJugador.innerHTML += "<div>" + jugadaJugador[i] + "</div>";
+       manoJugador.innerHTML += "<div class='carta'>"
+       + "<div class='num top'>" + jugadaJugador[i] + "</div>" 
+       + "<div class='palo'>" + iconoPicas + "</div>"
+       + "<div class='num bot'>" + jugadaJugador[i] + "</div>" 
+       + "</div>";
     }
 }
 
