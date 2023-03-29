@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackjack</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
@@ -30,9 +32,9 @@
             <p id="resultado"></p>
         </div>
         <div class="controles">
-            <div class="boton btn-start" onclick="empezarJuego()">Iniciar Partida</div>
-            <div class="boton btn-jugar" onclick="jugar('jugador')">Pedir carta</div>
-            <div class="boton btn-plantarse" onclick="plantarse()">Plantarse</div>
+            <div id="btn-iniciar" class="boton">Iniciar Partida</div>
+            <div id="btn-pedir" class="boton">Pedir carta</div>
+            <div id="btn-plantarse" class="boton">Plantarse</div>
         </div>
     </div>
 </body>
