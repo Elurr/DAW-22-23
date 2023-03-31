@@ -1,14 +1,115 @@
 // Baraja
-let picas = [
-    // "A" {
+// let esquemaBaraja = [
+//     {
+//         "letra": "A",
+//         "valor": 11
+//     },
+//     {
+//         "letra": null,
+//         "valor": 2
+//     },
+//     {
+//         "letra": null,
+//         "valor": 3
+//     },
+//     {
+//         "letra": null,
+//         "valor": 4
+//     },
+//     {
+//         "letra": null,
+//         "valor": 5
+//     },
+//     {
+//         "letra": null,
+//         "valor": 6
+//     },
+//     {
+//         "letra": null,
+//         "valor": 7
+//     },
+//     {
+//         "letra": null,
+//         "valor": 8
+//     },
+//     {
+//         "letra": null,
+//         "valor": 9
+//     },
+//     {
+//         "letra": null,
+//         "valor": 10
+//     },
+//     {
+//         "letra": "J",
+//         "valor": 10
+//     },
+//     {
+//         "letra": "Q",
+//         "valor": 10
+//     },
+//     {
+//         "letra": "K",
+//         "valor": 10
+//     },
+// ];
 
-    // }
-];
-// let diamantes = [];
-// let treboles = [];
-// let corazones = [];
+
+// // Creamos la baraja
+// let baraja = [];
+// let palos = [
+//     "T",
+//     "D",
+//     "C",
+//     "P"
+// ]
+
+// for (let i = 0; i <= 3; i++) {
+//     for (let j = 0; j < esquemaBaraja.length; j++) {
+//         baraja.push(esquemaBaraja[j]);
+//         baraja[baraja.length - 1].palo = palos[i];
+//     }
+// }
+// console.log(baraja);
 
 // Tenemos el juego de la casa
+function crearBaraja() {
+    // let rangos = new Array("A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K");
+
+    // let palos = new Array("T", "D", "C", "P");
+
+    // let m = rangos.length * palos.length;
+
+    // Creamos un array con los naipes vacíos
+    // this.naipes = new Array(m);
+
+    // for (let i = 0; i < palos.length; i++) {
+    //     for (let j = 0; j < rangos.length; j++) {
+    //         this.naipes[m + i * rangos.length + j] = new Naipe(rangos[j], palos[i]);
+    //     }        
+    // }
+    // console.log(this.naipes);
+
+
+    let baraja = new Array();
+    let palos = {
+        "T":"Tréboles",
+        "D":"Diamantes",
+        "C":"Corazones",
+        "P":"Picas"
+    }
+    let rangos = new Array("A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K");
+
+    Object.keys(palos).forEach(function(value) {
+        for (let i = 0; i < rangos.length; i++) {
+            
+            baraja.push(rangos[i] + value);
+        }
+    })
+    console.log(baraja);
+}
+crearBaraja();
+
 let puntosCasa = 0;
 let jugadaCasa = [];
 let cartasCasa = [
