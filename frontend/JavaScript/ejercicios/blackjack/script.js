@@ -172,7 +172,7 @@ function empezarJuego() {
 
     // Recogemos la dos cartas iniciales de la casa:
     darCarta("casa");
-    darCarta("casa");
+    manoCasa.innerHTML += 
 
 
     // Recogemos la dos cartas iniciales del jugador:
@@ -250,8 +250,8 @@ function calcularPuntos() {
     ganador();
 }
 
-let iconoDiamantes = `<i class='bi bi-suit-diamond-fill'></i>`;
-let iconoPicas = `<i class="bi bi-suit-spade-fill"></i>`;
+let iconoDiamantes = `<i class='bi bi-suit-diamond'></i>`;
+let iconoPicas = `<i class="bi bi-suit-spade"></i>`;
 
 
 function mostrarCartas() {
@@ -335,7 +335,7 @@ function darCarta(jugada) {
             break;
     }
 
-    if (jugadaCasa.length >= 2 && jugadaJugador.length >= 2) calcularPuntos();
+    if (jugadaCasa.length >= 1 && jugadaJugador.length >= 2) calcularPuntos();
 }
 
 function plantarse() {

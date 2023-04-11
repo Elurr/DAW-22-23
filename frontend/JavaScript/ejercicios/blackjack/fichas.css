@@ -8,6 +8,8 @@
     border-radius: 50%;
     background-size: 75px 75px;
     background-position: center center;
+    
+    transition: all .6s;
 }
 
 .ficha:before {
@@ -86,4 +88,9 @@
     background: #EBEBEB;
     color: #000000;
     border: 1px solid #000000;
+}
+
+.ficha:hover {
+    transform: scale(1.05);
+    cursor: pointer;
 }

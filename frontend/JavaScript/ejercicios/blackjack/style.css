@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Cousine&family=Rubik&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cousine&family=Kanit&family=Rubik&display=swap');
 body {
     height: 100vh;
     margin: 0;
 
+    font-family: 'Kanit', sans-serif;
     /* background: #184f18; */
     background: #ffffff;
 
@@ -16,6 +16,7 @@ body {
     /* background: rgba(0, 0, 0, 0.3); */
     background: #184f18;
     padding: 50px;
+    width: 65%;
 
     border-radius: 10px;
     box-shadow: 0 0 10px 5px;
@@ -44,14 +45,15 @@ body {
     margin: 20px;
     padding: 5px;
     border-radius: 5px;
-    background: #ffffff;
+    background: #161515;
+    color: #ddad32;
+    transition: all 0.3s;
     /* pointer-events: none; */
 }
 .controles .boton:hover {
     cursor: pointer;
+    box-shadow: 0 0 4px 1px #ddad32;
 }
-
-
 
 p {
     color: white;
@@ -64,43 +66,4 @@ p span div {
     text-align: center;
     margin: 1px;
 }
-span#mano-casa {
-    color: red;
-}
-span#mano-jugador {
-    color: black;
-}
 
-.carta {
-    background: #ffffff;
-    border: 1px solid black;
-    height: 45px;
-    width: 30px;
-    border-radius: 2px;
-    position: relative;
-}
-.carta .num {
-    font-family: 'Cousine', monospace;
-    /* font-family: 'Rubik', sans-serif; */
-    position: absolute;
-    margin: 0 1px;
-    font-size: 0.65rem;
-}
-.carta .num.top {
-    top: 0;
-    left: 0;
-}
-.carta .num.bot {
-    bottom: 0;
-    right: 0;
-    transform: rotateZ(180deg);
-}
-.carta .palo {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.2rem;
-}

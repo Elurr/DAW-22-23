@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Cousine&family=Rubik&display=swap');
+
+span#mano-casa {
+    color: #c52c06;
+    text-shadow: 0 0 3px #c52c06;
+}
+span#mano-jugador {
+    color: #6108e8;
+    text-shadow: 0 0 3px #6108e8;
+}
+
+.carta {
+    background: #161515;
+    height: 90px;
+    width: 60px;
+    border-radius: 4px;
+    position: relative;
+}
+.carta .num {
+    font-family: 'Cousine', monospace;
+    /* font-family: 'Rubik', sans-serif; */
+    position: absolute;
+    margin: 0 2px;
+    font-size: 1.3rem;
+}
+.carta .num.top {
+    top: 0;
+    left: 0;
+}
+.carta .num.bot {
+    bottom: 0;
+    right: 0;
+    transform: rotateZ(180deg);
+}
+.carta .palo {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.4rem;
+}
+#mano-casa .carta {
+    border: 1px solid #c52c06;
+    box-shadow: 0 0 4px 2px #c52c06;
+}
+#mano-jugador .carta {
+    border: 1px solid #6108e8;
+    box-shadow: 0 0 4px 2px #6108e8;
+}
+
