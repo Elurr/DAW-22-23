@@ -158,36 +158,48 @@ const btnIniciar = document.getElementById('btn-iniciar');
 const btnPedir = document.getElementById('btn-pedir');
 const btnPlantarse = document.getElementById('btn-plantarse');
 
+// Iconos de las cartas
+let iconoDuda = `<i class="bi bi-question-lg"></i>`;
+let iconoDiamantes = `<i class='bi bi-suit-diamond'></i>`;
+let iconoPicas = `<i class="bi bi-suit-spade"></i>`;
 
-let jugadorPlantado = false;
-let fin = false;
-let timer = 0;
+// let jugadorPlantado = false;
+// let fin = false;
+let temporizador = 0;
 
 function empezarJuego() {
     // Se resetean las cartas
     jugadaCasa = [];
     jugadaJugador = [];
-    fin = false;
+    // fin = false;
     activarBotones();
 
-    // Recogemos la dos cartas iniciales de la casa:
-    darCarta("casa");
-    manoCasa.innerHTML += 
-
-
+    
     // Recogemos la dos cartas iniciales del jugador:
     darCarta();
     darCarta();
+
+    // Recogemos la dos cartas iniciales de la casa:
+    darCarta("casa");
+    manoCasa.innerHTML += "<div class='carta duda'>" 
+    + "<div class='palo'>" + iconoDuda + "</div>"
+    + "</div>";
+
+    let tempParp = setInterval(parpadeo, 1000);
 }
 
 function activarBotones() {
     btnPedir.style['pointer-events'] = 'auto';
+    btnPedir.style['opacity'] = 1;
     btnPlantarse.style['pointer-events'] = 'auto';
+    btnPlantarse.style['opacity'] = 1;
 }
 
 function desactivarBotones() {
     btnPedir.style['pointer-events'] = 'none';
+    btnPedir.style['opacity'] = 0.7;
     btnPlantarse.style['pointer-events'] = 'none';
+    btnPlantarse.style['opacity'] = 0.7;
 }
 
 function calcularPuntos() {
@@ -250,8 +262,7 @@ function calcularPuntos() {
     ganador();
 }
 
-let iconoDiamantes = `<i class='bi bi-suit-diamond'></i>`;
-let iconoPicas = `<i class="bi bi-suit-spade"></i>`;
+
 
 
 function mostrarCartas() {
@@ -339,20 +350,30 @@ function darCarta(jugada) {
 }
 
 function plantarse() {
-    jugadorPlantado = true;
-    desactivarBotones();
+    // jugadorPlantado = true;
+
     if (puntosJugador > puntosCasa) {
         darCarta('casa');
 
-        timer = setTimeout(() => {
+        temporizador = setTimeout(() => {
             plantarse();
         }, 1000);
     } else {
-        clearTimeout(timer);
-        timer = 0;
+        clearTimeout(temporizador);
+        temporizador = 0;
     }
     
 }
+
+// Animación del parpadeo de la luz de neón
+function parpadeo() {
+    let luces = document.querySelectorAll('.carta:hover div');
+    for (let i = 0; i < luces.length; i++) {
+        luces[i].style.animationDuration = Math.floor(Math.random() * 10 + 1) + "s";
+        
+    }
+}
+
 
 
 
@@ -362,6 +383,7 @@ empezarJuego();
 btnIniciar.addEventListener('click', empezarJuego);
 btnPedir.addEventListener('click', darCarta);
 btnPlantarse.addEventListener('click', plantarse);
+btnPlantarse.addEventListener('click', desactivarBotones);
 
 // let arrayCartas = [];
 // for (let i = 0; i < arrayCartas.length; i++) {

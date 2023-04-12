@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Cousine&family=Rubik&display=swap');
 
+:root {
+    --tiempo-anim: 3s;
+}
+
 span#mano-casa {
     color: #c52c06;
     text-shadow: 0 0 3px #c52c06;
 }
+
 span#mano-jugador {
     color: #6108e8;
     text-shadow: 0 0 3px #6108e8;
@@ -15,7 +20,10 @@ span#mano-jugador {
     width: 60px;
     border-radius: 4px;
     position: relative;
+
+    transition: all .2s;
 }
+
 .carta .num {
     font-family: 'Cousine', monospace;
     /* font-family: 'Rubik', sans-serif; */
@@ -23,15 +31,18 @@ span#mano-jugador {
     margin: 0 2px;
     font-size: 1.3rem;
 }
+
 .carta .num.top {
     top: 0;
     left: 0;
 }
+
 .carta .num.bot {
     bottom: 0;
     right: 0;
     transform: rotateZ(180deg);
 }
+
 .carta .palo {
     margin: 0;
     padding: 0;
@@ -41,12 +52,80 @@ span#mano-jugador {
     transform: translate(-50%, -50%);
     font-size: 2.4rem;
 }
+
 #mano-casa .carta {
     border: 1px solid #c52c06;
-    box-shadow: 0 0 4px 2px #c52c06;
-}
-#mano-jugador .carta {
-    border: 1px solid #6108e8;
-    box-shadow: 0 0 4px 2px #6108e8;
+    box-shadow: 0 0 2px 2px #c52c06;
 }
 
+#mano-casa .carta.duda {
+    color: #eff;
+    text-shadow: 0 0 3px #eff;
+    border: 1px solid #eff;
+    box-shadow: 0 0 2px 2px #eff;
+    animation: flicker-shadow var(--tiempo-anim) linear infinite;
+
+}
+#mano-casa .carta.duda .palo {
+    animation: flicker var(--tiempo-anim) linear infinite;
+}
+
+.carta:hover {
+    animation: flicker-shadow var(--tiempo-anim) linear infinite;
+}
+
+.carta:hover div {
+    animation: flicker 3s linear infinite;
+    animation: flicker var(--tiempo-anim) linear infinite;
+}
+
+#mano-jugador .carta {
+    border: 1px solid #6108e8;
+    box-shadow: 0 0 2px 2px #6108e8;
+}
+
+@keyframes flicker {
+
+    0%,
+    19.999%,
+    22%,
+    62.999%,
+    64%,
+    64.999%,
+    70%,
+    100% {
+        opacity: .99;
+    }
+
+    20%,
+    21.999%,
+    63%,
+    63.999%,
+    65%,
+    69.999% {
+        opacity: 0.4;
+    }
+}
+
+@keyframes flicker-shadow {
+
+    0%,
+    19.999%,
+    22%,
+    62.999%,
+    64%,
+    64.999%,
+    70%,
+    100% {
+        box-shadow: 0 0 2px 2px;
+    }
+
+    20%,
+    21.999%,
+    63%,
+    63.999%,
+    65%,
+    69.999% {
+        box-shadow: none;
+    }
+}
