@@ -14,7 +14,9 @@ body {
 
 .container {
     /* background: rgba(0, 0, 0, 0.3); */
-    background: #184f18;
+    /* background: #044504; */
+    /* background: #011f01; */
+    background: linear-gradient(135deg, #044504 66%, #011f01);
     padding: 50px;
     width: 65%;
 
@@ -27,6 +29,12 @@ body {
     align-items: center;
 
     user-select: none;
+}
+
+#contenedor-baraja {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .tablero {

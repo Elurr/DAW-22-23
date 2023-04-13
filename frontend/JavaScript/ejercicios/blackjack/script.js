@@ -1,104 +1,21 @@
 // Baraja
-// let esquemaBaraja = [
-//     {
-//         "letra": "A",
-//         "valor": 11
-//     },
-//     {
-//         "letra": null,
-//         "valor": 2
-//     },
-//     {
-//         "letra": null,
-//         "valor": 3
-//     },
-//     {
-//         "letra": null,
-//         "valor": 4
-//     },
-//     {
-//         "letra": null,
-//         "valor": 5
-//     },
-//     {
-//         "letra": null,
-//         "valor": 6
-//     },
-//     {
-//         "letra": null,
-//         "valor": 7
-//     },
-//     {
-//         "letra": null,
-//         "valor": 8
-//     },
-//     {
-//         "letra": null,
-//         "valor": 9
-//     },
-//     {
-//         "letra": null,
-//         "valor": 10
-//     },
-//     {
-//         "letra": "J",
-//         "valor": 10
-//     },
-//     {
-//         "letra": "Q",
-//         "valor": 10
-//     },
-//     {
-//         "letra": "K",
-//         "valor": 10
-//     },
-// ];
+const contenedorBaraja = document.getElementById('contenedor-baraja');
+// Iconos de las cartas
+let iconoDuda = `<i class="bi bi-question-lg"></i>`;
+let iconoDiamantes = `<i class='bi bi-suit-diamond'></i>`;
+let iconoPicas = `<i class="bi bi-suit-spade"></i>`;
+let iconoCorazones = `<i class="bi bi-suit-heart"></i>`;
+let iconoTreboles = `<i class="bi bi-suit-club"></i>`;
 
-
-// // Creamos la baraja
-// let baraja = [];
-// let palos = [
-//     "T",
-//     "D",
-//     "C",
-//     "P"
-// ]
-
-// for (let i = 0; i <= 3; i++) {
-//     for (let j = 0; j < esquemaBaraja.length; j++) {
-//         baraja.push(esquemaBaraja[j]);
-//         baraja[baraja.length - 1].palo = palos[i];
-//     }
-// }
-// console.log(baraja);
-
-// Tenemos el juego de la casa
 function crearBaraja() {
-    // let rangos = new Array("A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K");
-
-    // let palos = new Array("T", "D", "C", "P");
-
-    // let m = rangos.length * palos.length;
-
-    // Creamos un array con los naipes vacíos
-    // this.naipes = new Array(m);
-
-    // for (let i = 0; i < palos.length; i++) {
-    //     for (let j = 0; j < rangos.length; j++) {
-    //         this.naipes[m + i * rangos.length + j] = new Naipe(rangos[j], palos[i]);
-    //     }        
-    // }
-    // console.log(this.naipes);
-
-
     let baraja = new Array();
     let palos = {
         "T":"Tréboles",
         "D":"Diamantes",
-        "C":"Corazones",
-        "P":"Picas"
+        "P":"Picas",
+        "C":"Corazones"
     }
-    let rangos = new Array("A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K");
+    let rangos = new Array("A", 2, 3, 4, 5, 6, 7, 8, 9, 0, "J", "Q", "K");
 
     Object.keys(palos).forEach(function(value) {
         for (let i = 0; i < rangos.length; i++) {
@@ -107,9 +24,54 @@ function crearBaraja() {
         }
     })
     console.log(baraja);
+
+    for (let i = 0; i < baraja.length; i++) {
+        let valor = baraja[i].charAt(0);
+        if (valor == 0) valor = 10;
+        let palo = baraja[i].charAt(1);
+        let print = '';
+        let color = '';
+        switch (palo) {
+            case 'T':
+                print = iconoTreboles;
+                color = '#069FC5'; 
+                break;
+            case 'D':
+                print = iconoDiamantes;
+                color = '#c52c06'; 
+                break;
+            case 'C':
+                print = iconoCorazones;
+                color = '#c52c06'; 
+                break;
+            case 'P':
+                print = iconoPicas;
+                color = '#069FC5'; 
+                break;
+        
+            default:
+                break;
+        }
+
+        contenedorBaraja.innerHTML += 
+        "<div class='carta baraja' style='color:"+ color +"'>"
+        + "<div class='num top'>" + valor + "</div>" 
+        + "<div class='palo'>" + print + "</div>"
+        + "<div class='num bot'>" + valor + "</div>" 
+        + "</div>";
+
+        let cartaTop = document.querySelectorAll('.baraja');
+        cartaTop[cartaTop.length - 1].style.zIndex = i;
+        cartaTop[cartaTop.length - 1].style.boxShadow = "0 0 2px 1px #eff";
+        // cartaTop[cartaTop.length - 1].style.position = "absolute";
+        // cartaTop[cartaTop.length - 1].style.left = i/3+"px";
+        // cartaTop[cartaTop.length - 1].style.top = i+"px";
+    }
 }
 crearBaraja();
 
+
+// El juego de la casa
 let puntosCasa = 0;
 let jugadaCasa = [];
 let cartasCasa = [
@@ -158,10 +120,6 @@ const btnIniciar = document.getElementById('btn-iniciar');
 const btnPedir = document.getElementById('btn-pedir');
 const btnPlantarse = document.getElementById('btn-plantarse');
 
-// Iconos de las cartas
-let iconoDuda = `<i class="bi bi-question-lg"></i>`;
-let iconoDiamantes = `<i class='bi bi-suit-diamond'></i>`;
-let iconoPicas = `<i class="bi bi-suit-spade"></i>`;
 
 // let jugadorPlantado = false;
 // let fin = false;
@@ -185,6 +143,7 @@ function empezarJuego() {
     + "<div class='palo'>" + iconoDuda + "</div>"
     + "</div>";
 
+    // Cada segundo los tiempos de la animación del parpadeo se randomizan
     let tempParp = setInterval(parpadeo, 1000);
 }
 
@@ -377,7 +336,7 @@ function parpadeo() {
 
 
 
-empezarJuego();
+// empezarJuego();
 
 // Event listener
 btnIniciar.addEventListener('click', empezarJuego);

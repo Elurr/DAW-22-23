@@ -2,20 +2,23 @@
 
 :root {
     --tiempo-anim: 3s;
+    --palo-negro: #069FC5;
+    /* --palo-negro: #2C06C5; */
+    --palo-rojo: #c52c06;
 }
 
 span#mano-casa {
-    color: #c52c06;
-    text-shadow: 0 0 3px #c52c06;
+    color: var(--palo-rojo);
+    text-shadow: 0 0 3px var(--palo-rojo);
 }
 
 span#mano-jugador {
-    color: #6108e8;
-    text-shadow: 0 0 3px #6108e8;
+    color: var(--palo-negro);
+    text-shadow: 0 0 3px var(--palo-negro);
 }
 
 .carta {
-    background: #161515;
+    /* background: #161515; */
     height: 90px;
     width: 60px;
     border-radius: 4px;
@@ -51,11 +54,12 @@ span#mano-jugador {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 2.4rem;
+    text-shadow: 0 0 3px;
 }
 
 #mano-casa .carta {
-    border: 1px solid #c52c06;
-    box-shadow: 0 0 2px 2px #c52c06;
+    border: 1px solid var(--palo-rojo);
+    box-shadow: 0 0 2px 2px var(--palo-rojo);
 }
 
 #mano-casa .carta.duda {
@@ -63,25 +67,25 @@ span#mano-jugador {
     text-shadow: 0 0 3px #eff;
     border: 1px solid #eff;
     box-shadow: 0 0 2px 2px #eff;
-    animation: flicker-shadow var(--tiempo-anim) linear infinite;
+    animation: flicker-shadow var(--tiempo-anim) linear;
 
 }
 #mano-casa .carta.duda .palo {
-    animation: flicker var(--tiempo-anim) linear infinite;
+    animation: flicker var(--tiempo-anim) linear;
 }
 
 .carta:hover {
-    animation: flicker-shadow var(--tiempo-anim) linear infinite;
+    animation: flicker-shadow var(--tiempo-anim) linear;
 }
 
 .carta:hover div {
-    animation: flicker 3s linear infinite;
-    animation: flicker var(--tiempo-anim) linear infinite;
+    /* animation: flicker 3s linear infinite; */
+    animation: flicker var(--tiempo-anim) linear;
 }
 
 #mano-jugador .carta {
-    border: 1px solid #6108e8;
-    box-shadow: 0 0 2px 2px #6108e8;
+    border: 1px solid var(--palo-negro);
+    box-shadow: 0 0 2px 2px var(--palo-negro);
 }
 
 @keyframes flicker {
