@@ -23,6 +23,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px 5px;
 
+    position: relative;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,7 +34,10 @@ body {
 }
 
 #contenedor-baraja {
-    position: relative;
+    /* position: relative; */
+    /* position: absolute;
+    top: 5%;
+    left: 5%; */
     display: flex;
     flex-wrap: wrap;
 }
@@ -51,13 +56,13 @@ body {
 }
 .controles .boton {
     margin: 20px;
-    padding: 5px;
+    padding: 5px 10px;
     text-align: center;
+    text-shadow: 0 0 9px;
     border-radius: 5px;
     background: #161515;
     color: #ddad32;
     transition: all 0.3s;
-    /* pointer-events: none; */
 }
 .controles .boton:hover {
     cursor: pointer;
