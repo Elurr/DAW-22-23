@@ -17,45 +17,57 @@ span#mano-jugador {
 }
 
 .carta {
-    
+    /* border-radius: 4px; */
+
     height: 90px;
     width: 60px;
     perspective: 500px;
-    
+
     position: relative;
 
-    transition: all 1s;
+    transition: all 1.5s;
     /* display: none; */
 }
+
 .carta .carta-contenedor {
-    background: #161515;
-    border-radius: 4px;
+    /* background: #161515; */
+    /* border-radius: 4px; */
     position: relative;
     width: 100%;
     height: 100%;
     transition: transform .5s;
     transform-style: preserve-3d;
 }
+
 .carta:hover .carta-contenedor {
     transform: rotateY(180deg);
 }
+
 .carta * {
     text-shadow: 0 0 8px;
 }
-.frontal, .trasera {
+
+.frontal,
+.trasera {
+    background: #161515cc;
+    border-radius: 2.5px;
     position: absolute;
     height: 100%;
     width: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
+
 .visible {
     display: block !important;
 }
-.trasera, .voltear {
+
+.trasera,
+.voltear {
     /* display: block !important; */
     transform: rotateY(180deg);
 }
+
 .oculta {
     display: none !important;
 }
@@ -89,16 +101,18 @@ span#mano-jugador {
     font-size: 2.4rem;
 }
 
-#mano-casa .carta .carta-contenedor{
+#mano-casa .carta .carta-contenedor {
     border: 1px solid var(--palo-rojo);
     box-shadow: 0 0 2px 2px var(--palo-rojo);
 }
+
 .carta-roja {
     color: var(--palo-rojo);
     text-shadow: 0 0 3px var(--palo-rojo);
     border: 1px solid var(--palo-rojo);
     box-shadow: 0 0 2px 2px var(--palo-rojo);
 }
+
 .carta-negra {
     color: var(--palo-negro);
     text-shadow: 0 0 3px var(--palo-negro);
@@ -106,7 +120,7 @@ span#mano-jugador {
     box-shadow: 0 0 2px 2px var(--palo-negro);
 }
 
-.duda, 
+.duda,
 #mano-casa .duda {
     color: #eff;
     text-shadow: 0 0 3px #eff;
@@ -122,6 +136,7 @@ span#mano-jugador {
     /* animation: flicker-shadow var(--tiempo-anim) linear; */
 
 }
+
 .duda .bi-question-lg::before {
     /* transform: rotateY(180deg); */
 }
@@ -135,8 +150,8 @@ span#mano-jugador {
 }
 
 .carta:hover div {
-    /* animation: flicker 3s linear infinite; */
-    /* animation: flicker var(--tiempo-anim) linear; */
+    /* animation: flicker 3s linear infinite;
+    animation: flicker var(--tiempo-anim) linear; */
 }
 
 #mano-jugador .carta .carta-contenedor {

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cousine&family=Kanit&family=Rubik&display=swap');
 body {
-    height: 100vh;
+    /* height: 100vh; */
     margin: 0;
 
     font-family: 'Kanit', sans-serif;
@@ -19,6 +19,8 @@ body {
     background: linear-gradient(135deg, #044504 66%, #011f01);
     padding: 50px;
     width: 65%;
+    min-width: 800px;
+    margin: 100px;
 
     border-radius: 10px;
     box-shadow: 0 0 10px 5px;
@@ -34,12 +36,19 @@ body {
 }
 
 #contenedor-baraja {
-    /* position: relative; */
+    position: relative;
     /* position: absolute;
     top: 5%;
     left: 5%; */
+    height: 360px;
+
+    transition: all 1s;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+}
+#contenedor-baraja > * {
+    margin: 3px 0;
 }
 
 .tablero {
