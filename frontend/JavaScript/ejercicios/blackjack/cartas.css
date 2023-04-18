@@ -24,6 +24,9 @@ span#mano-jugador {
     perspective: 500px;
 
     position: relative;
+    
+    left: 0px;
+    order: 0;
 
     transition: all 1.5s;
     /* display: none; */
@@ -41,6 +44,7 @@ span#mano-jugador {
 
 .carta:hover .carta-contenedor {
     transform: rotateY(180deg);
+    /* animation: girar 2s linear infinite; */
 }
 
 .carta * {
@@ -158,6 +162,9 @@ span#mano-jugador {
     border: 1px solid var(--palo-negro);
     box-shadow: 0 0 2px 2px var(--palo-negro);
 }
+#girar {
+    animation: girar 2s linear infinite;
+}
 
 @keyframes flicker {
 
@@ -203,4 +210,12 @@ span#mano-jugador {
     69.999% {
         box-shadow: none;
     }
+}
+
+@keyframes girar {
+    0% {transform: rotateY(0deg);}
+    /* 25% {transform: rotateY(90deg);} */
+    50% {transform: rotateY(180deg);}
+    /* 75% {transform: rotateY(270deg);} */
+    100% {transform: rotateY(360deg);}
 }

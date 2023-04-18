@@ -56,7 +56,7 @@ function crearBaraja() {
         contenedorBaraja.innerHTML +=
             "<div id='" + baraja[i] + "' class='carta baraja'>"
             + "<div class='carta-contenedor'>"
-            
+
             + "<div class='frontal " + color + "'>"
             + "<div class='num top'>" + valor + "</div>"
             + "<div class='palo'>" + print + "</div>"
@@ -96,45 +96,48 @@ function voltearBaraja() {
 function juntar() {
     for (let i = 0; i < baraja.length; i++) {
         baraja[i].style.marginLeft = '-59.85px';
-        
-    }
 
-    // contenedorBaraja.style.flexWrap = 'nowrap';
-    
+    }
 }
 function separar() {
     for (let i = 0; i < baraja.length; i++) {
         baraja[i].style.marginLeft = '0';
-        
-    }
 
-    // contenedorBaraja.style.flexWrap = 'wrap';
+    }
 }
 function mezclar() {
     let listado = [];
     for (let i = 0; i < baraja.length; i++) {
         listado[i] = i;
     }
-    let currentIndex = listado.length,  randomIndex;
-  
+    let currentIndex = listado.length, randomIndex;
+
     // While there remain elements to shuffle.
     while (currentIndex != 0) {
-  
-      // Pick a remaining element.
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-  
-      // And swap it with the current element.
-      [listado[currentIndex], listado[randomIndex]] = [
-        listado[randomIndex], listado[currentIndex]];
+
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [listado[currentIndex], listado[randomIndex]] = [
+            listado[randomIndex], listado[currentIndex]];
     }
-  
+
+
     for (let i = 0; i < baraja.length; i++) {
-        baraja[i].style.order = listado[i];
-        baraja[i].style.zIndex = listado[i];
         
+        setTimeout(() => {
+            baraja[listado[i]].style.left = '100px';
+            setTimeout(() => {
+                baraja[listado[i]].style.left = '0px';
+
+                baraja[listado[i]].style.zIndex = i;
+                baraja[listado[i]].style.order = i;
+            }, 700);
+        }, 200 * i);
     }
-  }
+}
 
 // El juego de la casa
 let puntosCasa = 0;
@@ -204,7 +207,7 @@ function empezarJuego() {
 
     // Recogemos la dos cartas iniciales de la casa:
     darCarta("casa");
-    manoCasa.innerHTML += "<div class='carta duda'>"
+    manoCasa.innerHTML += "<div id='girar' class='carta duda'>"
         + "<div class='palo'>" + iconoDuda + "</div>"
         + "</div>";
 
