@@ -124,18 +124,15 @@ function mezclar() {
             listado[randomIndex], listado[currentIndex]];
     }
 
-
     for (let i = 0; i < baraja.length; i++) {
-        
         setTimeout(() => {
-            baraja[listado[i]].style.left = '100px';
+            baraja[listado[i]].style.left = '170px';
+            baraja[listado[i]].style.zIndex = i;
+            baraja[listado[i]].style.order = i;
             setTimeout(() => {
                 baraja[listado[i]].style.left = '0px';
-
-                baraja[listado[i]].style.zIndex = i;
-                baraja[listado[i]].style.order = i;
-            }, 700);
-        }, 200 * i);
+            }, 400);
+        }, 50 * i);
     }
 }
 
